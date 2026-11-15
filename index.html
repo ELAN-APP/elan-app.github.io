@@ -20,7 +20,7 @@
   padding-top:env(safe-area-inset-top,0px);
   padding-bottom:env(safe-area-inset-bottom,0px);
   --bg:#FBF6FF; --surface:#FFFFFF; --ink:#1B1033; --muted:#5E5478;
-  --violet:#6C2BFF; --violet-soft:#EDE3FF; --pink:#FF2E88; --line:#E3D8F5;
+  --violet:#5B2EE0; --violet-soft:#ECE6FC; --pink:#B4234F; --line:#E4DFF0;
   --serif:"Shippori Mincho B1","Hiragino Mincho ProN","Noto Serif",Georgia,serif;
   --sans:"Figtree","Segoe UI",system-ui,-apple-system,sans-serif;
   color-scheme:light;
@@ -45,7 +45,7 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var
 .brand{font-family:var(--serif);font-weight:800;font-size:26px}
 nav{display:flex;gap:4px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:4px;overflow-x:auto;max-width:100%}
 nav button{font:inherit;font-size:15px;font-weight:500;color:var(--muted);background:none;border:0;border-radius:999px;padding:8px 14px;cursor:pointer;white-space:nowrap}
-nav button[aria-current="page"]{background:linear-gradient(135deg,#6C2BFF,#FF2E88);color:#fff}
+nav button[aria-current="page"]{background:var(--violet);color:var(--on-violet)}
 button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,label:focus-within,[tabindex]:focus-visible{outline:3px solid var(--violet);outline-offset:2px}
 h1,h2,h3{font-family:var(--serif);line-height:1.15;margin:0}
 h1{font-size:clamp(30px,5vw,46px);font-weight:800}
@@ -63,7 +63,7 @@ input[type=text],input[type=time],input[type=date],input[type=number],select{fon
 textarea{font:inherit;font-size:15px;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);width:100%}
 .view h3.sec{margin:34px 0 10px}
 /* Bandeau */
-.top{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;background:linear-gradient(135deg,#6C2BFF 0%,#B12BFF 55%,#FF2E88 100%);border-radius:28px;padding:28px 32px;color:#fff}
+.top{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;background:var(--surface);border-radius:28px;padding:28px 32px;color:#fff}
 .top svg{background:#fff;border-radius:50%;padding:10px;box-shadow:0 10px 30px rgba(27,16,51,.3)}
 .top .bilan{margin-top:10px;max-width:46ch;color:rgba(255,255,255,.93)}
 .stats{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
@@ -198,7 +198,7 @@ textarea{font:inherit;font-size:15px;padding:10px 12px;border-radius:10px;border
 .tg-hours span{position:absolute;right:6px;font-size:12px;color:var(--muted);transform:translateY(-8px)}
 .tg-col{position:relative;height:calc(var(--hrs) * var(--px));border-left:1px solid var(--line);background-image:repeating-linear-gradient(to bottom,transparent 0,transparent calc(var(--px) - 1px),var(--line) calc(var(--px) - 1px),var(--line) var(--px))}
 .tg-col.today{background-color:var(--violet-soft)}
-.tev{position:absolute;box-sizing:border-box;border-left:5px solid var(--c);border-radius:8px;background:var(--surface);background:color-mix(in srgb,var(--c) 16%,var(--surface));padding:2px 4px;overflow:hidden;font-size:12px;line-height:1.25;display:flex;gap:2px}
+.tev{position:absolute;box-sizing:border-box;border-left:5px solid var(--c);border-radius:8px;background:var(--surface);padding:2px 4px;overflow:hidden;font-size:12px;line-height:1.25;display:flex;gap:2px}
 .tev.done{opacity:.55}
 .tev .open{font-size:12px;text-decoration:none}
 .tev .x{font-size:14px;padding:0 2px;align-self:flex-start}
@@ -248,7 +248,7 @@ textarea{font:inherit;font-size:15px;padding:10px 12px;border-radius:10px;border
 .xtot{margin:12px 0;font-weight:600}
 .xrow{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:10px}
 .xsaved{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin-bottom:10px;max-width:780px}
-.xrun{position:fixed;inset:0;background:linear-gradient(135deg,#6C2BFF,#FF2E88);color:#fff;z-index:40;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:24px;text-align:center;overflow:auto}
+.xrun{position:fixed;inset:0;background:#17112C;color:#F1ECFF;z-index:40;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:24px;text-align:center;overflow:auto}
 .xrun[hidden]{display:none}
 .xrun .big{font-family:var(--serif);font-size:clamp(26px,6vw,44px);font-weight:800}
 .xrun .time{font-size:clamp(56px,14vw,120px);font-weight:800;line-height:1}
@@ -256,7 +256,7 @@ textarea{font:inherit;font-size:15px;padding:10px 12px;border-radius:10px;border
 .xrun .btn{background:#fff;color:#1B1033}
 #printarea{display:none}
 @media print{body>*:not(#printarea){display:none!important}#printarea{display:block!important;color:#000;background:#fff}#printarea .pf{break-inside:avoid;border:1px solid #999;padding:8px 10px;margin:0 0 8px;font-size:12px}#printarea h1{font-size:20px;margin-bottom:10px}#printarea h3{font-size:14px;margin:0 0 4px}#printarea p,#printarea li{font-size:12px;line-height:1.4}}
-body{background:radial-gradient(1100px 480px at 92% -8%,rgba(255,46,136,.10),transparent 60%),radial-gradient(900px 520px at -8% 0%,rgba(108,43,255,.12),transparent 60%),var(--bg);background-attachment:fixed}
+body{background:var(--bg);background-attachment:fixed}
 .card,.pcard,.xcard,.slot,.sug,.obs,.xsaved,.xbuild,.mmpanel,.tipform,.kcard{box-shadow:0 1px 2px rgba(27,16,51,.05),0 10px 26px -14px rgba(108,43,255,.28)}
 .btn{transition:transform .15s,box-shadow .15s,opacity .15s}
 .btn:hover{transform:translateY(-1px);box-shadow:0 6px 16px -8px rgba(27,16,51,.5)}
@@ -507,7 +507,7 @@ body[data-view="aujourdhui"] .fab,body[data-view="agenda"] .fab,body[data-view="
 .enso{display:block}
 .enso-fill{transition:stroke-dasharray 1.1s cubic-bezier(.4,0,.2,1)}
 .ensoc{position:absolute;inset:0;display:grid;place-items:center;color:var(--violet)}
-.otile{display:inline-grid;place-items:center;border-radius:32%;flex:none;color:var(--c);background:var(--violet-soft);background:color-mix(in srgb,var(--c) 15%,var(--surface))}
+.otile{display:inline-grid;place-items:center;border-radius:32%;flex:none;color:var(--c);background:var(--violet-soft)}
 .orow{grid-template-columns:auto 1fr auto;grid-template-areas:"t n c" "t s c";column-gap:14px}
 .orow .otile{grid-area:t}
 .odh{display:flex;gap:14px;align-items:center;margin-top:14px}
@@ -584,6 +584,45 @@ body.ro .main{padding-top:68px}
 .sec2{font-family:var(--serif);font-size:20px;font-weight:700;margin:0 0 6px}
 .copyrow{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);flex-wrap:wrap}
 .copyrow small{display:block;color:var(--muted);font-size:14px}
+
+/* ===== Lot E5 · palette « Nuit » (direction choisie au lot D4), en clair et en sombre =====
+   Elle remplace les couleurs précédentes (ancien violet et dégradé violet-rose).
+   Un seul dégradé par écran : la lueur douce du haut (body::after). Contraste du texte : 4,5 contre 1 au moins (tests/lot-e-ecrans.mjs). */
+:root{--bg:#F6F4FB;--nuit-bg:#F6F4FB;--surface:#FFFFFF;--ink:#1A1530;--muted:#5A5274;--violet:#5B2EE0;--on-violet:#FFFFFF;--violet-soft:#ECE6FC;
+  --line:#E4DFF0;--border:#CFC7E4;--pink:#B4234F;--on-pink:#FFFFFF;--nuit-glow:#5B2EE0;--glow-op:.16;color-scheme:light}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0C0918;--nuit-bg:#0C0918;--surface:#17112C;--ink:#F1ECFF;--muted:#ADA3CF;--violet:#B9A2FF;--on-violet:#120C26;
+  --violet-soft:#2A1F4D;--line:#2C2448;--border:#3D3166;--pink:#FF8FB1;--on-pink:#120C26;--nuit-glow:#6E40FF;--glow-op:.55;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0C0918;--nuit-bg:#0C0918;--surface:#17112C;--ink:#F1ECFF;--muted:#ADA3CF;--violet:#B9A2FF;--on-violet:#120C26;
+  --violet-soft:#2A1F4D;--line:#2C2448;--border:#3D3166;--pink:#FF8FB1;--on-pink:#120C26;--nuit-glow:#6E40FF;--glow-op:.55;color-scheme:dark}
+/* la teinte du fond et la lueur ne changent plus selon le moment de la journée : la palette reste la même */
+body[data-tod]{--bg:var(--nuit-bg);--glow:var(--nuit-glow)}
+body{background:var(--bg)}
+body::after{opacity:var(--glow-op)}
+/* plus de dégradé violet-rose : aplats de la palette */
+nav button[aria-current="page"]{background:var(--violet);color:var(--on-violet)}
+.top{background:var(--surface);color:var(--ink);border:1px solid var(--line)}
+.xrun{background:#17112C;color:#F1ECFF}
+.tipcard{background:var(--violet-soft);color:var(--ink)}
+/* texte posé sur l'accent : blanc en clair, presque noir en sombre (l'accent sombre est clair) */
+.btn{color:var(--on-violet)}
+.btn.danger{background:var(--pink);color:var(--on-pink)}
+.pick[aria-pressed="true"]{color:var(--on-violet)}
+.fab{color:var(--on-violet)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .chk[aria-pressed="true"] span{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23120C26' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E")}}
+:root[data-theme="dark"] .chk[aria-pressed="true"] span{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23120C26' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E")}
+
+/* ===== Lot E6 · une couleur par objectif : 6 couleurs franches, chacune en version claire et sombre =====
+   --oN : la couleur (texte coloré, traits, pastilles) ; --oN-on : le texte posé sur elle ; --oN-s : un fond sourd (vignettes).
+   Contraste vérifié à 4,5 au moins dans les deux modes (tests/lot-e-ecrans.mjs). Le format des données ne change pas. */
+:root{--o0:#6A2BD6;--o0-on:#FFFFFF;--o0-s:#F0EAFB;--o1:#C0266E;--o1-on:#FFFFFF;--o1-s:#F9E9F0;--o2:#0B7354;--o2-on:#FFFFFF;--o2-s:#E7F1EE;--o3:#1F56C9;--o3-on:#FFFFFF;--o3-s:#E9EEFA;--o4:#B4470A;--o4-on:#FFFFFF;--o4-s:#F8EDE6;--o5:#8F6A00;--o5-on:#FFFFFF;--o5-s:#F4F0E6}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--o0:#AE89EE;--o0-on:#120C26;--o0-s:#352953;--o1:#EA76AC;--o1-on:#120C26;--o1-s:#412546;--o2:#09B380;--o2-on:#120C26;--o2-s:#14313D;--o3:#729BF0;--o3-on:#120C26;--o3-s:#292D53;--o4:#FD7022;--o4-on:#120C26;--o4-s:#45242A;--o5:#C79400;--o5-on:#120C26;--o5-s:#3A2B23}}
+:root[data-theme="dark"]{--o0:#AE89EE;--o0-on:#120C26;--o0-s:#352953;--o1:#EA76AC;--o1-on:#120C26;--o1-s:#412546;--o2:#09B380;--o2-on:#120C26;--o2-s:#14313D;--o3:#729BF0;--o3-on:#120C26;--o3-s:#292D53;--o4:#FD7022;--o4-on:#120C26;--o4-s:#45242A;--o5:#C79400;--o5-on:#120C26;--o5-s:#3A2B23}
+.otile{background:var(--cs,var(--violet-soft))}
+.tev{background:var(--cs,var(--surface))}
+.xic svg{stroke:var(--c-on,#fff)}
+/* plus de bordure colorée d'un seul côté en haut des cartes, et des ombres rares */
+.card,.pcard{border-top:1px solid var(--line)}
+.card,.pcard,.xcard,.slot,.sug,.obs,.xsaved,.xbuild,.mmpanel,.tipform,.kcard{box-shadow:none}
 </style>
 </head>
 <body>
@@ -671,7 +710,7 @@ body.ro .main{padding-top:68px}
   <div class="mcard" role="dialog" aria-modal="true" aria-label="Questionnaire d’accueil" tabindex="-1"></div>
 </div>
 <script>
-const COLORS = ["#6C2BFF","#FF2E88","#0A9F78","#2D7DFF","#FF7A1A"];
+const COLORS = ["var(--o0)", "var(--o1)", "var(--o2)", "var(--o3)", "var(--o4)"];
 const TIPC = ["#FFD1E6","#FFE98A","#BFF3E0","#D9CBFF"];
 const TIMES = [15,30,60,90];
 
@@ -1111,27 +1150,27 @@ function renderCartes(){
     const p = pos.get(n.id);
     if(parent){
       const pp = pos.get(parent.id);
-      edges += `<path d="${curve(pp.x+ox+NODEW, pp.y+oy+NODEH/2, p.x+ox, p.y+oy+NODEH/2)}" fill="none" stroke="${col}" stroke-width="${d===1?3:2}" opacity=".6"/>`;
+      edges += `<path d="${curve(pp.x+ox+NODEW, pp.y+oy+NODEH/2, p.x+ox, p.y+oy+NODEH/2)}" fill="none" style="stroke:${col}" stroke-width="${d===1?3:2}" opacity=".6"/>`;
     }
     let label = n.t;
     if(n.link){ const r = findSub(n.link.oid, n.link.sid); if(r.s && r.s.done) label = "✓ " + label; }
     const hidden = n.col && n.kids.length ? ` (+${n.kids.length})` : "";
     const sel = state.selNode === n.id;
-    const fill = d === 0 ? "url(#mmg)" : col;
+    const fill = d === 0 ? "var(--violet)" : col;
     nodes += `<g class="mnode${sel?" sel":""}" data-mapnode="${n.id}" tabindex="0" role="button" aria-label="Bloc : ${esc(n.t)}${sel?" (sélectionné)":""}">
-      <rect x="${p.x+ox}" y="${p.y+oy}" width="${NODEW}" height="${NODEH}" rx="${d===0?17:10}" fill="${fill}"/>
-      <text class="oncol" x="${p.x+ox+12}" y="${p.y+oy+NODEH/2+5}" font-size="14">${esc(cut(label, 22) + hidden)}</text><title>${esc(n.t)}</title></g>`;
+      <rect x="${p.x+ox}" y="${p.y+oy}" width="${NODEW}" height="${NODEH}" rx="${d===0?17:10}" style="fill:${fill}"/>
+      <text class="oncol" style="fill:${d === 0 ? "var(--on-violet)" : onOf(col)}" x="${p.x+ox+12}" y="${p.y+oy+NODEH/2+5}" font-size="14">${esc(cut(label, 22) + hidden)}</text><title>${esc(n.t)}</title></g>`;
     if(!n.col) n.kids.forEach(k => draw(k, d+1, k.c != null ? COLORS[k.c] : col, n));
   }
   (function drawRoot(){
     const p = pos.get(map.root.id);
     const sel = state.selNode === map.root.id;
     nodes += `<g class="mnode${sel?" sel":""}" data-mapnode="${map.root.id}" tabindex="0" role="button" aria-label="Bloc central : ${esc(map.root.t)}${sel?" (sélectionné)":""}">
-      <rect x="${p.x+ox}" y="${p.y+oy}" width="${NODEW}" height="${NODEH+6}" rx="20" fill="url(#mmg)"/>
-      <text class="oncol" x="${p.x+ox+14}" y="${p.y+oy+NODEH/2+8}" font-size="15">${esc(cut(map.root.t, 20) + (map.root.col && map.root.kids.length ? " (+"+map.root.kids.length+")" : ""))}</text><title>${esc(map.root.t)}</title></g>`;
+      <rect x="${p.x+ox}" y="${p.y+oy}" width="${NODEW}" height="${NODEH+6}" rx="20" style="fill:var(--violet)"/>
+      <text class="oncol" style="fill:var(--on-violet)" x="${p.x+ox+14}" y="${p.y+oy+NODEH/2+8}" font-size="15">${esc(cut(map.root.t, 20) + (map.root.col && map.root.kids.length ? " (+"+map.root.kids.length+")" : ""))}</text><title>${esc(map.root.t)}</title></g>`;
     if(!map.root.col) map.root.kids.forEach((k,i) => draw(k, 1, k.c != null ? COLORS[k.c] : colorOf(i), map.root));
   })();
-  $("mm").innerHTML = `<svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="group" aria-label="Carte mentale ${esc(map.root.t)}"><defs><linearGradient id="mmg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6C2BFF"/><stop offset="1" stop-color="#FF2E88"/></linearGradient></defs>${edges}${nodes}</svg>`;
+  $("mm").innerHTML = `<svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="group" aria-label="Carte mentale ${esc(map.root.t)}">${edges}${nodes}</svg>`;
   const sp = pos.get(state.selNode), fk = map.id + "|" + state.selNode;
   if(sp && ui.mmFocus !== fk){ $("mm").scrollTop = Math.max(0, sp.y - 120); $("mm").scrollLeft = Math.max(0, sp.x - 12); ui.mmFocus = fk; }
   renderMapPanel(map);
@@ -1234,7 +1273,7 @@ function renderJournee(){
     state.objs.forEach((o,oi) => o.subs.forEach(s => {
       if(!s.done && !taken.has(s.id) && s.min <= left){ picks.push({o,oi,s}); taken.add(s.id); left -= s.min; }
     }));
-    const body = picks.length ? picks.map(({o,oi,s}) => `<div class="sug" style="--c:${colorOf(oi)}">
+    const body = picks.length ? picks.map(({o,oi,s}) => `<div class="sug" style="${coul(colorOf(oi))}">
         <input type="checkbox" id="j-${s.id}" data-o="${o.id}" data-s="${s.id}" aria-label="Marquer comme faite : ${esc(s.text)}">
         <button class="open" data-open="${o.id}|${s.id}">${esc(s.text)}<small>${esc(o.name)} · ${fmt(s.min)}</small></button></div>`).join("")
       : `<p class="muted">Aucune étape ne tient ici. Découpe une étape en plus petit dans « Mes objectifs ».</p>`;
@@ -1255,7 +1294,7 @@ function openModal(oid, sid){
   const {o,s} = findSub(oid, sid); if(!s) return;
   cur = {oid, sid};
   const d = DETAILS[sid], card = document.querySelector("#modal .mcard");
-  card.style.setProperty("--c", colorOf(state.objs.indexOf(o)));
+  setCoul(card, colorOf(state.objs.indexOf(o)));
   $("m-obj").textContent = o.name;
   $("m-title").textContent = s.text;
   $("m-meta").textContent = "Durée estimée : " + fmt(s.min);
@@ -1282,7 +1321,7 @@ function closeModal(){ $("modal").hidden = true; cur = null; }
 /* ---- Sport : bibliothèque, enchaînements, compile ---- */
 const XBY = {}; EXOS.forEach(e => { XBY[e.id] = e; });
 const XCATS = ["Mobilité et échauffement","Étirements","Yoga","Renforcement","Cardio","Kung-fu et qi gong","Respiration","Équilibre"];
-const XCOL = {"Mobilité et échauffement":"#6C2BFF","Étirements":"#FF2E88","Yoga":"#0A9F78","Renforcement":"#2D7DFF","Cardio":"#FF7A1A","Kung-fu et qi gong":"#B12BFF","Respiration":"#0A8FA0","Équilibre":"#8A6D00"};
+const XCOL = {"Mobilité et échauffement":"var(--o0)","Étirements":"var(--o1)","Yoga":"var(--o2)","Renforcement":"var(--o3)","Cardio":"var(--o4)","Kung-fu et qi gong":"var(--o0)","Respiration":"var(--o3)","Équilibre":"var(--o5)"};
 const XICON = {
  "Mobilité et échauffement":'<svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-3-6.2M20 4v5h-5"/></svg>',
  "Étirements":'<svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>',
@@ -1304,7 +1343,7 @@ function xFiltered(){
 }
 function xCard(e){
   const fav = state.favs.includes(e.id);
-  return `<article class="xcard" style="--c:${XCOL[e.cat]}"><div class="xhead"><span class="xic" aria-hidden="true">${XICON[e.cat]||""}</span><h4>${esc(e.nom)}</h4></div>
+  return `<article class="xcard" style="${coul(XCOL[e.cat])}"><div class="xhead"><span class="xic" aria-hidden="true">${XICON[e.cat]||""}</span><h4>${esc(e.nom)}</h4></div>
     <p class="tags">${esc(e.zone)} · Niveau ${xlev(e.niv)} · ${esc(e.duree)}</p>
     <div class="xact"><button class="btn ghost" data-xview="${e.id}">Voir la fiche</button><button class="btn" data-xadd="${e.id}">Ajouter</button>
     <button class="btn ghost" data-xfav="${e.id}" aria-pressed="${fav}" aria-label="${fav?"Retirer de ma compile":"Garder dans ma compile"} : ${esc(e.nom)}">${fav?"♥ Gardée":"♡ Garder"}</button></div></article>`;
@@ -1342,7 +1381,7 @@ let xcur = null;
 function openX(id){
   const e = XBY[id]; if(!e) return;
   xcur = id;
-  const card = document.querySelector("#xmodal .mcard"); card.style.setProperty("--c", XCOL[e.cat]);
+  const card = document.querySelector("#xmodal .mcard"); setCoul(card, XCOL[e.cat]);
   $("x-cat").textContent = e.cat; $("x-title").textContent = e.nom;
   $("x-meta").textContent = e.zone + " · Niveau " + xlev(e.niv) + " · " + e.duree;
   $("x-body").innerHTML = `<div class="mblock"><h4>Comment faire</h4><ol>${e.etapes.map(x => `<li>${esc(x)}</li>`).join("")}</ol></div>` +
@@ -1631,20 +1670,24 @@ const ICONS = {
 // icônes du catalogue ; un objectif importé peut porter sa propre icône (champ « icon »)
 const ICON_OF = {o1:"leaf", o2:"globe", o3:"moon", o4:"sun", o5:"activity", o6:"sun", o7:"sparkle", o8:"activity", o9:"target", o10:"activity", o11:"book", o12:"home", o13:"globe"};
 function hashId(s){ let h = 7; for(const c of String(s)) h = (h * 31 + c.charCodeAt(0)) >>> 0; return h; }
-const PALETTE = ["#5B2EE0", "#D6336C", "#0E8F6E", "#2B6FD6", "#D9660F", "#8A3FD0"];
+const PALETTE = [0, 1, 2, 3, 4, 5].map(i => "var(--o" + i + ")");
+// à partir d'une couleur d'objectif « var(--oN) » : la couleur, le texte posé dessus, et le fond sourd (variables CSS du mode en cours)
+const onOf = c => { const m = /--o(\d)/.exec(c); return m ? "var(--o" + m[1] + "-on)" : "#fff"; };
+const coul = c => { const m = /--o(\d)/.exec(c); return m ? "--c:" + c + ";--c-on:var(--o" + m[1] + "-on);--cs:var(--o" + m[1] + "-s)" : "--c:" + c; };
+const setCoul = (el, c) => { el.style.setProperty("--c", c); const m = /--o(\d)/.exec(c); if(m){ el.style.setProperty("--c-on", "var(--o" + m[1] + "-on)"); el.style.setProperty("--cs", "var(--o" + m[1] + "-s)"); } };
 function objColor(o){ const id = typeof o === "string" ? o : (o && o.id) || ""; return PALETTE[hashId(id) % PALETTE.length]; }
 function tile(o, size){
   const id = typeof o === "string" ? o : o.id, own = typeof o === "object" && o && ICONS[o.icon] ? o.icon : null;
   const c = objColor(id), ic = ICONS[own || ICON_OF[id] || "target"];
   const s = size || 40;
-  return `<span class="otile" style="--c:${c};width:${s}px;height:${s}px"><svg width="${Math.round(s * .5)}" height="${Math.round(s * .5)}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ic}</svg></span>`;
+  return `<span class="otile" style="${coul(c)};width:${s}px;height:${s}px"><svg width="${Math.round(s * .5)}" height="${Math.round(s * .5)}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ic}</svg></span>`;
 }
 function ensoSvg(p, size, label){
   const R = 42, C = 2 * Math.PI * R, gap = 0.1, full = p >= 1;
   const len = full ? C : Math.max(0.015, p) * C * (1 - gap), trk = C * (1 - gap);
-  return `<svg class="enso" width="${size}" height="${size}" viewBox="0 0 100 100" role="img" aria-label="${esc(label)}"><defs><linearGradient id="eg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7C4DFF"/><stop offset="1" stop-color="#FF4F9A"/></linearGradient></defs>
+  return `<svg class="enso" width="${size}" height="${size}" viewBox="0 0 100 100" role="img" aria-label="${esc(label)}">
     <circle cx="50" cy="50" r="${R}" fill="none" stroke="var(--line)" stroke-width="6" stroke-linecap="round" stroke-dasharray="${trk} ${C}" transform="rotate(-105 50 50)"/>
-    <circle class="enso-fill" cx="50" cy="50" r="${R}" fill="none" stroke="url(#eg)" stroke-width="8" stroke-linecap="round" stroke-dasharray="${len} ${C}" transform="rotate(-105 50 50)" data-len="${len}" data-c="${C}"/></svg>`;
+    <circle class="enso-fill" cx="50" cy="50" r="${R}" fill="none" style="stroke:var(--violet)" stroke-width="8" stroke-linecap="round" stroke-dasharray="${len} ${C}" transform="rotate(-105 50 50)" data-len="${len}" data-c="${C}"/></svg>`;
 }
 function weekBars(){
   const ws = mondayOf(today()), names = ["L", "M", "M", "J", "V", "S", "D"], days = []; let max = 45;
@@ -2077,7 +2120,7 @@ async function shareWeek(){
   const g = cv.getContext && cv.getContext("2d");
   if(!g){ toast("Ton navigateur ne peut pas créer l’image."); return; }
   try{ await Promise.all([document.fonts.load('800 100px "Shippori Mincho B1"'), document.fonts.load('600 40px Figtree')]); }catch(e){}
-  const bg = g.createLinearGradient(0, 0, 1080, 1350); bg.addColorStop(0, "#4B22C8"); bg.addColorStop(1, "#E0357F"); g.fillStyle = bg; g.fillRect(0, 0, 1080, 1350);
+  g.fillStyle = "#0C0918"; g.fillRect(0, 0, 1080, 1350); const bg = g.createRadialGradient(540, 420, 0, 540, 420, 760); bg.addColorStop(0, "rgba(110,64,255,.62)"); bg.addColorStop(1, "rgba(110,64,255,0)"); g.fillStyle = bg; g.fillRect(0, 0, 1080, 1350);
   const cx = 540, cy = 520, r = 230, a0 = -Math.PI / 2 - 0.25, span = Math.PI * 2 * 0.9;
   const planned = state.agenda.filter(e => e.date >= ws && e.date <= we && !((eventInfo(e) || {}).done)).length, pct = n ? Math.min(1, n / Math.max(1, n + planned)) : 0.04;
   g.lineCap = "round"; g.lineWidth = 34; g.strokeStyle = "rgba(255,255,255,.24)"; g.beginPath(); g.arc(cx, cy, r, a0, a0 + span); g.stroke();

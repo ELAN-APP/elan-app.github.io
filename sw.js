@@ -4,7 +4,7 @@
    À CHAQUE MISE À JOUR DE L'APPLI, change VERSION ci-dessous (par exemple la date du jour + un numéro).
    Le navigateur voit alors que sw.js a changé : il installe la nouvelle version, qui remplit un nouveau cache
    et supprime les anciens caches d'Élan. Les données (localStorage : elan-v3, copies…) ne sont jamais touchées. */
-const VERSION = "2026-11-15-122704";
+const VERSION = "2026-11-15-191646";
 const CACHE = "elan-app-" + VERSION;
 const CORE = ["./", "./index.html", "./manifest.webmanifest", "./icon-192.png", "./icon-512.png", "./icon-maskable-512.png"];
 
